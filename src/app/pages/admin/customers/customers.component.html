@@ -1,0 +1,66 @@
+<p>Customer List</p>
+
+
+<div class="row">
+    <div class="col-lg-12">
+
+        <input
+        type="text"
+        style="padding: 8px;
+        margin: 15px auto;
+        width: 20%;
+        float: right;
+      
+        display: block;"
+        placeholder="Search"
+        (keyup)="updateFilter($event)"
+      />
+       
+        <ngx-datatable #myTable class="material test-check" [rows]="rows" [scrollbarH]="true" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'" [externalPaging]="true" [count]="caseItemsTotal" [offset]="caseOffset" [limit]="caseLimit" (page)='onCasePageChange($event)'>
+            <ngx-datatable-column name="Customer ID" prop="id" [width]="80" ></ngx-datatable-column>
+            <ngx-datatable-column name="Actions" sortable="false" prop="id" [width]="120">
+                <ng-template let-column="column" ngx-datatable-header-template>
+                    Action
+                </ng-template>
+                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                    
+                    <!-- <a routerLink="show/1">Update</a> -->
+                    <a class="success p-0" data-original-title="view" title="view" (click)="onView(row)">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                    </a>
+
+                    |
+
+                    <a class="success p-0" data-original-title="Edit" title="Edit" (click)="onEdit(row)">
+                        <i class="fa fa-edit font-medium-3 mr-2"></i>
+                    </a>
+
+                    |
+                    <a class="success p-0" data-original-title="view" title="view" (click)="onView(row)">
+                        <i class="fa fa-trash" aria-hidden="true"></i>
+                    </a>
+
+                </ng-template>
+            </ngx-datatable-column>
+            <ngx-datatable-column name="Email" prop="email" [width]="250"></ngx-datatable-column>
+            <ngx-datatable-column name="First Name" prop="firstName"></ngx-datatable-column>
+            <ngx-datatable-column name="Last Name" prop="lastName"></ngx-datatable-column>
+            <ngx-datatable-column name="User Name" prop="userName" [width]="250"></ngx-datatable-column>
+            <ngx-datatable-column name="Phone Number" prop="phoneNumber">
+                <!-- <ng-template let-column="column" ngx-datatable-header-template>
+                    Patient DOB
+                </ng-template>
+                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                     {{value | date:'MM-dd-yyyy'}}
+                </ng-template> -->
+            </ngx-datatable-column>
+            
+
+            
+            
+
+        </ngx-datatable>
+    </div>
+</div>
+
+<router-outlet name="mainOutlet"></router-outlet>

@@ -1,0 +1,30 @@
+<div class="card card-chart">
+    <div class="card-header card-header-primary">
+        <div class="ct-chart" #packagesChart [class.hidden]="expanded"></div>
+        <div class="ct-chart" #expandedChart [class.hidden]="!expanded"></div>
+        <div *ngIf="loading">Loading...</div>
+        <button mat-button color="primary" *ngIf="expanded && !loading" (click)="expanded = !expanded">
+            <mat-icon>chevron_left</mat-icon>
+            Back
+        </button>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Packages Purchased</h4>
+        <p class="card-category">
+            <span class="text-success"></span>
+        </p>
+        <p class="card-body">
+            <label id="revenue-source-label">Source</label>
+            <mat-radio-group aria-labelledby="revenue-source-label" [(ngModel)]="selectedPackage" (ngModelChange)="onDataUpdated(false)" class="radio-group">
+                <mat-radio-button *ngFor="let package of packages" [value]="package" class="radio-button" [disabled]="loading">
+                    {{package}}
+                </mat-radio-button>
+            </mat-radio-group>
+        </p>
+    </div>
+    <div class="card-footer">
+        <div class="stats">
+            <mat-icon>access_time</mat-icon> updated {{lastUpdated | amTimeAgo}}
+        </div>
+    </div>
+</div>

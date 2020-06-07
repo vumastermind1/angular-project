@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~saturn-datepicker/bundle.css';
+
+
+$mat-flikshop-primary: (
+    50 : #fff1e1,
+    100 : #ffdbb3,
+    200 : #ffc481,
+    300 : #ffac4e,
+    400 : #ff9a28,
+    500 : #ff8802,
+    600 : #ff8002,
+    700 : #ff7501,
+    800 : #ff6b01,
+    900 : #ff5801,
+    A100 : #ffffff,
+    A200 : #fff6f2,
+    A400 : #ffd1bf,
+    A700 : #ffbfa6,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$mat-flikshop-accent: (
+    50 : #f7ede2,
+    100 : #ebd2b6,
+    200 : #ddb485,
+    300 : #cf9554,
+    400 : #c57f2f,
+    500 : #bb680a,
+    600 : #b56009,
+    700 : #ac5507,
+    800 : #a44b05,
+    900 : #963a03,
+    A100 : #ffd4c1,
+    A200 : #ffb18e,
+    A400 : #ff8d5b,
+    A700 : #ff7c41,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+$primary: mat-palette($mat-flikshop-primary);
+$accent: mat-palette($mat-flikshop-accent);
+
+$theme: mat-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+
+.cdk-overlay-container {
+    z-index: 1100;
+}
+
+.mat-tooltip.custom-tooltip {
+    color: white !important;
+    font-size: 12px !important;
+}

@@ -1,0 +1,22 @@
+<div class="card card-chart">
+    <div class="card-header card-header-primary">
+        <div class="ct-chart" #postcardsChart [class.hidden]="expanded"></div>
+        <div class="ct-chart" #expandedChart [class.hidden]="!expanded"></div>
+        <div *ngIf="loading">Loading...</div>
+        <button mat-button color="primary" *ngIf="expanded && !loading" (click)="expanded = !expanded">
+            <mat-icon>chevron_left</mat-icon>
+            Back
+        </button>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Flikshops Shipped</h4>
+        <p class="card-category">
+            <span class="text-success"></span>            
+        </p>
+    </div>
+    <div class="card-footer">
+        <div class="stats">
+            <mat-icon>access_time</mat-icon> updated {{lastUpdated | amTimeAgo}}
+        </div>
+    </div>
+</div>

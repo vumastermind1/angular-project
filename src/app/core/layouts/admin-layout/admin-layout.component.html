@@ -1,0 +1,13 @@
+<div class="wrapper">
+  <div class="sidebar" data-color="danger" data-background-color="white" data-image="./assets/img/sidebar-1.jpg">
+    <flikshop-sidebar></flikshop-sidebar>
+    <div class="sidebar-background"></div>
+  </div>
+  <div class="main-panel">
+    <flikshop-navbar></flikshop-navbar>
+    <router-outlet></router-outlet>
+    <div *ngIf="isMaps('maps')">
+      <flikshop-footer></flikshop-footer>
+    </div>
+  </div>
+</div>
